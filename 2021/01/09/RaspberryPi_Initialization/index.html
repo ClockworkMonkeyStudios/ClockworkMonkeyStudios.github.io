@@ -28,7 +28,7 @@
 <meta property="og:description" content="树莓派型号：Raspberry Pi 4 Model B Rev 1.2 树莓派系统版本：Ubuntu Server 20.04.1 LTS Ubuntu 软件镜像：中国科学技术大学开源软件镜像  修改主机名称Ubuntu 主机名称文件：&#x2F;etc&#x2F;hostname。编辑 &#x2F;etc&#x2F;hostname 文件，将主机名由 ubuntu 改为 RaspberryPi。 1ubuntu@ubuntu:~$">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-09T05:57:39.556Z">
-<meta property="article:modified_time" content="2021-01-09T07:31:53.119Z">
+<meta property="article:modified_time" content="2021-01-09T07:47:17.784Z">
 <meta property="article:author" content="Clockwork Monkey Stutdios">
 <meta name="twitter:card" content="summary">
 
@@ -179,7 +179,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-01-09 13:57:39 / 修改时间：15:31:53" itemprop="dateCreated datePublished" datetime="2021-01-09T13:57:39+08:00">2021-01-09</time>
+              <time title="创建时间：2021-01-09 13:57:39 / 修改时间：15:47:17" itemprop="dateCreated datePublished" datetime="2021-01-09T13:57:39+08:00">2021-01-09</time>
             </span>
 
           
@@ -196,13 +196,13 @@
         <ul>
 <li>树莓派型号：<code>Raspberry Pi 4 Model B Rev 1.2</code></li>
 <li>树莓派系统版本：<code>Ubuntu Server 20.04.1 LTS</code></li>
-<li>Ubuntu 软件镜像：中国科学技术大学开源软件镜像</li>
+<li>Ubuntu 软件镜像：<code>中国科学技术大学开源软件镜像</code></li>
 </ul>
 <h1 id="修改主机名称"><a href="#修改主机名称" class="headerlink" title="修改主机名称"></a>修改主机名称</h1><p>Ubuntu 主机名称文件：<code>/etc/hostname</code>。编辑 <code>/etc/hostname</code> 文件，将主机名由 <code>ubuntu</code> 改为 <code>RaspberryPi</code>。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@ubuntu:~$ sudo vim /etc/hostname</span><br></pre></td></tr></table></figure>
 
 <p>文件内容改为：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RaspberryPi</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RaspberryPi</span><br></pre></td></tr></table></figure>
 
 <p>使用 <code>sudo reboot</code> 命令重启树莓派，重启完成后再次登录即可。</p>
 <a id="more"></a>
@@ -223,13 +223,13 @@
 <h2 id="修改时区"><a href="#修改时区" class="headerlink" title="修改时区"></a>修改时区</h2><p>系统默认是 <code>UTC</code> 时间，修改时区需要使用 <code>sudo tzselect</code> 命令</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@RaspberryPi:~$ sudo tzselect</span><br><span class="line">Please identify a location so that time zone rules can be set correctly.</span><br><span class="line">Please select a continent, ocean, "coord", or "TZ".</span><br><span class="line">1) Africa							     7) Europe</span><br><span class="line">2) Americas							     8) Indian Ocean</span><br><span class="line">3) Antarctica							     9) Pacific Ocean</span><br><span class="line">4) Asia								    10) coord - I want to use geographical coordinates.</span><br><span class="line">5) Atlantic Ocean						    11) TZ - I want to specify the timezone using the Posix TZ format.</span><br><span class="line">6) Australia</span><br><span class="line"><span class="meta">#</span><span class="bash">? 4</span></span><br><span class="line">Please select a country whose clocks agree with yours.</span><br><span class="line">1) Afghanistan		  10) Cyprus		    19) Japan		      28) Macau			37) Qatar		  46) Turkmenistan</span><br><span class="line">2) Armenia		  11) East Timor	    20) Jordan		      29) Malaysia		38) Russia		  47) United Arab Emirates</span><br><span class="line">3) Azerbaijan		  12) Georgia		    21) Kazakhstan	      30) Mongolia		39) Saudi Arabia	  48) Uzbekistan</span><br><span class="line">4) Bahrain		  13) Hong Kong		    22) Korea (North)	      31) Myanmar (Burma)	40) Singapore		  49) Vietnam</span><br><span class="line">5) Bangladesh		  14) India		    23) Korea (South)	      32) Nepal			41) Sri Lanka		  50) Yemen</span><br><span class="line">6) Bhutan		  15) Indonesia		    24) Kuwait		      33) Oman			42) Syria</span><br><span class="line">7) Brunei		  16) Iran		    25) Kyrgyzstan	      34) Pakistan		43) Taiwan</span><br><span class="line">8) Cambodia		  17) Iraq		    26) Laos		      35) Palestine		44) Tajikistan</span><br><span class="line">9) China		  18) Israel		    27) Lebanon		      36) Philippines		45) Thailand</span><br><span class="line"><span class="meta">#</span><span class="bash">? 9</span></span><br><span class="line">Please select one of the following timezones.</span><br><span class="line">1) Beijing Time</span><br><span class="line">2) Xinjiang Time</span><br><span class="line"><span class="meta">#</span><span class="bash">? 1</span></span><br><span class="line"></span><br><span class="line">The following information has been given:</span><br><span class="line"></span><br><span class="line">	China</span><br><span class="line">	Beijing Time</span><br><span class="line"></span><br><span class="line">Therefore TZ='Asia/Shanghai' will be used.</span><br><span class="line">Selected time is now:	Sun Dec 20 16:20:00 CST 2020.</span><br><span class="line">Universal Time is now:	Sun Dec 20 08:20:00 UTC 2020.</span><br><span class="line">Is the above information OK?</span><br><span class="line">1) Yes</span><br><span class="line">2) No</span><br><span class="line"><span class="meta">#</span><span class="bash">? 1</span></span><br><span class="line"></span><br><span class="line">You can make this change permanent for yourself by appending the line</span><br><span class="line">	TZ='Asia/Shanghai'; export TZ</span><br><span class="line">to the file '.profile' in your home directory; then log out and log in again.</span><br><span class="line"></span><br><span class="line">Here is that TZ value again, this time on standard output so that you</span><br><span class="line">can use the /usr/bin/tzselect command in shell scripts:</span><br><span class="line">Asia/Shanghai</span><br></pre></td></tr></table></figure>
 
-<p>按照提示，修改 <code>.profile</code> 文件，在文件末尾追加 <code>TZ=&#39;Asia/Shanghai&#39;; export TZ</code></p>
+<p>按照提示，修改 <code>.profile</code> 文件，在文件末尾追加 <code>TZ=&#39;Asia/Shanghai&#39;; export TZ</code> ：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@RaspberryPi:~$ sudo vim .profile</span><br></pre></td></tr></table></figure>
 
-<p>文件末尾追加时区信息</p>
+<p>文件末尾追加时区信息：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> TZ</span></span><br><span class="line">TZ='Asia/Shanghai'; export TZ</span><br></pre></td></tr></table></figure>
 
-<p>使 <code>.profile</code> 文件生效</p>
+<p>使 <code>.profile</code> 文件生效：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@RaspberryPi:~$ sudo source .profile</span><br></pre></td></tr></table></figure>
 
 
