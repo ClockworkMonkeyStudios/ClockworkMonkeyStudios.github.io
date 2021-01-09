@@ -20,15 +20,19 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Clockwork Monkey Stutdios">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="树莓派型号：Raspberry Pi 4 Model B Rev 1.2 树莓派系统版本：Ubuntu Server 20.04.1 LTS Ubuntu 软件镜像：中国科学技术大学开源软件镜像  安装 Dokcer更新软件12ubuntu@RaspberryPi:~$ sudo apt updateubuntu@RaspberryPi:~$ sudo apt upgrade  下载并执行安装脚">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树莓派安装 Docker">
+<meta property="og:url" content="http://yoursite.com/2021/01/09/RaspberryPi_Docker/index.html">
 <meta property="og:site_name" content="Clockwork Monkey Stutdios">
+<meta property="og:description" content="树莓派型号：Raspberry Pi 4 Model B Rev 1.2 树莓派系统版本：Ubuntu Server 20.04.1 LTS Ubuntu 软件镜像：中国科学技术大学开源软件镜像  安装 Dokcer更新软件12ubuntu@RaspberryPi:~$ sudo apt updateubuntu@RaspberryPi:~$ sudo apt upgrade  下载并执行安装脚">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-09T06:48:01.939Z">
+<meta property="article:modified_time" content="2021-01-09T07:30:36.299Z">
 <meta property="article:author" content="Clockwork Monkey Stutdios">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/archives/2020/">
+<link rel="canonical" href="http://yoursite.com/2021/01/09/RaspberryPi_Docker/">
 
 
 <script id="page-configurations">
@@ -36,12 +40,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | Clockwork Monkey Stutdios</title>
+  <title>树莓派安装 Docker | Clockwork Monkey Stutdios</title>
   
 
 
@@ -144,90 +148,96 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 5 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/09/RaspberryPi_Docker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Clockwork Monkey Stutdios">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Clockwork Monkey Stutdios">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          树莓派安装 Docker
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-09 14:48:01 / 修改时间：15:30:36" itemprop="dateCreated datePublished" datetime="2021-01-09T14:48:01+08:00">2021-01-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
+        <ul>
+<li>树莓派型号：<code>Raspberry Pi 4 Model B Rev 1.2</code></li>
+<li>树莓派系统版本：<code>Ubuntu Server 20.04.1 LTS</code></li>
+<li>Ubuntu 软件镜像：中国科学技术大学开源软件镜像</li>
+</ul>
+<h1 id="安装-Dokcer"><a href="#安装-Dokcer" class="headerlink" title="安装 Dokcer"></a>安装 Dokcer</h1><h2 id="更新软件"><a href="#更新软件" class="headerlink" title="更新软件"></a>更新软件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@RaspberryPi:~$ sudo apt update</span><br><span class="line">ubuntu@RaspberryPi:~$ sudo apt upgrade</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<h2 id="下载并执行安装脚本"><a href="#下载并执行安装脚本" class="headerlink" title="下载并执行安装脚本"></a>下载并执行安装脚本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@RaspberryPi:~$ curl -fsSL https:&#x2F;&#x2F;get.docker.com -o get-docker.sh</span><br><span class="line">ubuntu@RaspberryPi:~$ sudo sh get-docker.sh</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-07-23T08:00:00+08:00"
-              content="2020-07-23">
-          07-23
-        </time>
-      </div>
+<a id="more"></a>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/07/23/MySQL-5/" itemprop="url">
-            <span itemprop="name">Ubuntu 安装 MySQL 远程连接 MySQL</span>
-          </a>
-      </div>
+<h2 id="为-ubuntu-用户添加-docker-权限"><a href="#为-ubuntu-用户添加-docker-权限" class="headerlink" title="为 ubuntu 用户添加 docker 权限"></a>为 <code>ubuntu</code> 用户添加 <code>docker</code> 权限</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@RaspberryPi:~$ sudo usermod -aG docker $(whoami)</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </article>
+<h1 id="更换-Ubuntu-的-Dokcer-软件源"><a href="#更换-Ubuntu-的-Dokcer-软件源" class="headerlink" title="更换 Ubuntu 的 Dokcer 软件源"></a>更换 Ubuntu 的 Dokcer 软件源</h1><p>在 <code>/etc/apt/source.list</code> 文件末尾追加以下内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Docker</span></span><br><span class="line">deb [arch=arm64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu focal stable</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<h1 id="更换-Docker-镜像源"><a href="#更换-Docker-镜像源" class="headerlink" title="更换 Docker 镜像源"></a>更换 Docker 镜像源</h1><p>Docker 镜像源在文件 <code>/etc/docker/daemon.json</code> 内</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@RaspberryPi:~$ sudo vim /etc/docker/daemon.json</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-07-23T08:00:00+08:00"
-              content="2020-07-23">
-          07-23
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/07/23/MySQL-8/" itemprop="url">
-            <span itemprop="name">Ubuntu 安装 MySQL 8.x</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-03T19:00:00+08:00"
-              content="2020-06-03">
-          06-03
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/06/03/Hexo/" itemprop="url">
-            <span itemprop="name">Hello Hexo</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"registry-mirrors"</span>: [</span><br><span class="line">        <span class="string">"https://ustc-edu-cn.mirror.aliyuncs.com/"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/01/09/RaspberryPi_Initialization/" rel="prev" title="树莓派基础设置">
+      <i class="fa fa-chevron-left"></i> 树莓派基础设置
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -280,6 +290,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-Dokcer"><span class="nav-number">1.</span> <span class="nav-text">安装 Dokcer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#更新软件"><span class="nav-number">1.1.</span> <span class="nav-text">更新软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载并执行安装脚本"><span class="nav-number">1.2.</span> <span class="nav-text">下载并执行安装脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为-ubuntu-用户添加-docker-权限"><span class="nav-number">1.3.</span> <span class="nav-text">为 ubuntu 用户添加 docker 权限</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换-Ubuntu-的-Dokcer-软件源"><span class="nav-number">2.</span> <span class="nav-text">更换 Ubuntu 的 Dokcer 软件源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换-Docker-镜像源"><span class="nav-number">3.</span> <span class="nav-text">更换 Docker 镜像源</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

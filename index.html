@@ -150,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/23/MySQL-8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/09/RaspberryPi_Docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -164,7 +164,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/07/23/MySQL-8/" class="post-title-link" itemprop="url">Ubuntu 安装 MySQL 8.x</a>
+            <a href="/2021/01/09/RaspberryPi_Docker/" class="post-title-link" itemprop="url">树莓派安装 Docker</a>
         </h2>
 
         <div class="post-meta">
@@ -175,7 +175,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-07-23 08:00:00 / 修改时间：08:50:02" itemprop="dateCreated datePublished" datetime="2020-07-23T08:00:00+08:00">2020-07-23</time>
+              <time title="创建时间：2021-01-09 14:48:01 / 修改时间：15:30:36" itemprop="dateCreated datePublished" datetime="2021-01-09T14:48:01+08:00">2021-01-09</time>
             </span>
 
           
@@ -189,26 +189,99 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="MySQL-8-x-安装"><a href="#MySQL-8-x-安装" class="headerlink" title="MySQL 8.x 安装"></a>MySQL 8.x 安装</h1><h2 id="MySQL-APT-Repository"><a href="#MySQL-APT-Repository" class="headerlink" title="MySQL APT Repository"></a>MySQL APT Repository</h2><p>APT 地址：<code>https://dev.mysql.com/downloads/repo/apt/</code></p>
-<p>Ubuntu 内下载命令：<code>wget https://repo.mysql.com//mysql-apt-config_0.8.15-1_all.deb</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@VM-0-16-ubuntu:~$ wget https:&#x2F;&#x2F;repo.mysql.com&#x2F;&#x2F;mysql-apt-config_0.8.15-1_all.deb</span><br><span class="line">--2020-06-05 09:23:21--  https:&#x2F;&#x2F;repo.mysql.com&#x2F;&#x2F;mysql-apt-config_0.8.15-1_all.deb</span><br><span class="line">Resolving repo.mysql.com (repo.mysql.com)... 23.199.73.25</span><br><span class="line">Connecting to repo.mysql.com (repo.mysql.com)|23.199.73.25|:443... connected.</span><br><span class="line">HTTP request sent, awaiting response... 200 OK</span><br><span class="line">Length: 35532 (35K) [application&#x2F;x-debian-package]</span><br><span class="line">Saving to: ‘mysql-apt-config_0.8.15-1_all.deb’</span><br><span class="line"></span><br><span class="line">mysql-apt-config_0.8.15-1_all 100%[&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;]  34.70K  82.2KB&#x2F;s    in 0.4s</span><br><span class="line"></span><br><span class="line">2020-06-05 09:23:29 (82.2 KB&#x2F;s) - ‘mysql-apt-config_0.8.15-1_all.deb’ saved [35532&#x2F;35532]</span><br><span class="line"></span><br><span class="line">ubuntu@VM-0-16-ubuntu:~$ ls</span><br><span class="line">mysql-apt-config_0.8.15-1_all.deb</span><br></pre></td></tr></table></figure>
+          <ul>
+<li>树莓派型号：<code>Raspberry Pi 4 Model B Rev 1.2</code></li>
+<li>树莓派系统版本：<code>Ubuntu Server 20.04.1 LTS</code></li>
+<li>Ubuntu 软件镜像：中国科学技术大学开源软件镜像</li>
+</ul>
+<h1 id="安装-Dokcer"><a href="#安装-Dokcer" class="headerlink" title="安装 Dokcer"></a>安装 Dokcer</h1><h2 id="更新软件"><a href="#更新软件" class="headerlink" title="更新软件"></a>更新软件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@RaspberryPi:~$ sudo apt update</span><br><span class="line">ubuntu@RaspberryPi:~$ sudo apt upgrade</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@VM-0-16-ubuntu:~$ sudo dpkg -i mysql-apt-config_0.8.15-1_all.deb</span><br><span class="line">Selecting previously unselected package mysql-apt-config.</span><br><span class="line">(Reading database ... 77010 files and directories currently installed.)</span><br><span class="line">Preparing to unpack mysql-apt-config_0.8.15-1_all.deb ...</span><br><span class="line">Unpacking mysql-apt-config (0.8.15-1) ...</span><br><span class="line">Setting up mysql-apt-config (0.8.15-1) ...</span><br><span class="line">Warning: apt-key should not be used in scripts (called from postinst maintainerscript of the package mysql-apt-config)</span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+<h2 id="下载并执行安装脚本"><a href="#下载并执行安装脚本" class="headerlink" title="下载并执行安装脚本"></a>下载并执行安装脚本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@RaspberryPi:~$ curl -fsSL https:&#x2F;&#x2F;get.docker.com -o get-docker.sh</span><br><span class="line">ubuntu@RaspberryPi:~$ sudo sh get-docker.sh</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/09/RaspberryPi_Docker/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@VM-0-16-ubuntu:~$ sudo apt update</span><br><span class="line">Hit:1 http:&#x2F;&#x2F;mirrors.tencentyun.com&#x2F;ubuntu bionic InRelease</span><br><span class="line">Hit:2 http:&#x2F;&#x2F;mirrors.tencentyun.com&#x2F;ubuntu bionic-security InRelease</span><br><span class="line">Hit:3 http:&#x2F;&#x2F;mirrors.tencentyun.com&#x2F;ubuntu bionic-updates InRelease</span><br><span class="line">Get:4 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic InRelease [19.4 kB]</span><br><span class="line">Get:5 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-8.0 Sources [946 B]</span><br><span class="line">Get:6 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-apt-config i386 Packages [563 B]</span><br><span class="line">Get:7 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-apt-config amd64 Packages [563 B]</span><br><span class="line">Get:8 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-8.0 amd64 Packages [7,605 B]</span><br><span class="line">Get:9 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-8.0 i386 Packages [7,606 B]</span><br><span class="line">Get:10 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-tools i386 Packages [4,749 B]</span><br><span class="line">Get:11 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-tools amd64 Packages [5,331 B]</span><br><span class="line">Fetched 46.8 kB in 4s (11.8 kB&#x2F;s)</span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">153 packages can be upgraded. Run &#39;apt list --upgradable&#39; to see them.</span><br></pre></td></tr></table></figure>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/09/RaspberryPi_Initialization/">
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@VM-0-16-ubuntu:~$ sudo apt install mysql-server</span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">The following package was automatically installed and is no longer required:</span><br><span class="line">  linux-modules-4.15.0-29-generic</span><br><span class="line">Use &#39;sudo apt autoremove&#39; to remove it.</span><br><span class="line">The following additional packages will be installed:</span><br><span class="line">  libaio1 libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-common mysql-community-client mysql-community-client-core</span><br><span class="line">  mysql-community-server mysql-community-server-core</span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">  libaio1 libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-common mysql-community-client mysql-community-client-core</span><br><span class="line">  mysql-community-server mysql-community-server-core mysql-server</span><br><span class="line">0 upgraded, 12 newly installed, 0 to remove and 153 not upgraded.</span><br><span class="line">Need to get 35.7 MB of archives.</span><br><span class="line">After this operation, 249 MB of additional disk space will be used.</span><br><span class="line">Do you want to continue? [Y&#x2F;n] Y</span><br></pre></td></tr></table></figure>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Clockwork Monkey Stutdios">
+      <meta itemprop="description" content="">
+    </span>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@VM-0-16-ubuntu:~$ sudo apt-get install mysql-server</span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">The following package was automatically installed and is no longer required:</span><br><span class="line">  linux-modules-4.15.0-29-generic</span><br><span class="line">Use &#39;sudo apt autoremove&#39; to remove it.</span><br><span class="line">The following additional packages will be installed:</span><br><span class="line">  libaio1 libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-common mysql-community-client mysql-community-client-core</span><br><span class="line">  mysql-community-server mysql-community-server-core</span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">  libaio1 libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-common mysql-community-client mysql-community-client-core</span><br><span class="line">  mysql-community-server mysql-community-server-core mysql-server</span><br><span class="line">0 upgraded, 12 newly installed, 0 to remove and 153 not upgraded.</span><br><span class="line">Need to get 35.7 MB of archives.</span><br><span class="line">After this operation, 249 MB of additional disk space will be used.</span><br><span class="line">Do you want to continue? [Y&#x2F;n] Y</span><br><span class="line">Get:1 http:&#x2F;&#x2F;mirrors.tencentyun.com&#x2F;ubuntu bionic-updates&#x2F;main amd64 libaio1 amd64 0.3.110-5ubuntu0.1 [6,476 B]</span><br><span class="line">Get:2 http:&#x2F;&#x2F;mirrors.tencentyun.com&#x2F;ubuntu bionic&#x2F;universe amd64 libmecab2 amd64 0.996-5 [257 kB]</span><br><span class="line">Get:3 http:&#x2F;&#x2F;mirrors.tencentyun.com&#x2F;ubuntu bionic&#x2F;universe amd64 mecab-utils amd64 0.996-5 [4,856 B]</span><br><span class="line">Get:4 http:&#x2F;&#x2F;mirrors.tencentyun.com&#x2F;ubuntu bionic&#x2F;universe amd64 mecab-ipadic all 2.7.0-20070801+main-1 [12.1 MB]</span><br><span class="line">Get:5 http:&#x2F;&#x2F;mirrors.tencentyun.com&#x2F;ubuntu bionic&#x2F;universe amd64 mecab-ipadic-utf8 all 2.7.0-20070801+main-1 [3,522 B]</span><br><span class="line">Get:6 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-8.0 amd64 mysql-common amd64 8.0.20-1ubuntu18.04 [94.3 kB]</span><br><span class="line">Get:7 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-8.0 amd64 mysql-community-client-core amd64 8.0.20-1ubuntu18.04 [1,707 kB]</span><br><span class="line">Get:8 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-8.0 amd64 mysql-community-client amd64 8.0.20-1ubuntu18.04 [2,834 kB]</span><br><span class="line">44% [8 mysql-community-client 57.6 kB&#x2F;2,834 kB 2%]                                                                                    10.1 kB&#x2F;s 35min 14s</span><br></pre></td></tr></table></figure>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Clockwork Monkey Stutdios">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/09/RaspberryPi_Initialization/" class="post-title-link" itemprop="url">树莓派基础设置</a>
+        </h2>
 
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<p>CREATE DATABASE alpha DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_0900_ai_ci;</p>
-<p>CREATE USER ‘alpha’@’%’ IDENTIFIED BY ‘237172.Alpha’;</p>
-<p>GRANT ALL PRIVILEGES ON alpha.* TO ‘alpha’@’%’;</p>
-<p>FLUSH PRIVILEGES;</p>
-<p>exit;</p>
+              <time title="创建时间：2021-01-09 13:57:39 / 修改时间：15:31:53" itemprop="dateCreated datePublished" datetime="2021-01-09T13:57:39+08:00">2021-01-09</time>
+            </span>
 
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li>树莓派型号：<code>Raspberry Pi 4 Model B Rev 1.2</code></li>
+<li>树莓派系统版本：<code>Ubuntu Server 20.04.1 LTS</code></li>
+<li>Ubuntu 软件镜像：中国科学技术大学开源软件镜像</li>
+</ul>
+<h1 id="修改主机名称"><a href="#修改主机名称" class="headerlink" title="修改主机名称"></a>修改主机名称</h1><p>Ubuntu 主机名称文件：<code>/etc/hostname</code>。编辑 <code>/etc/hostname</code> 文件，将主机名由 <code>ubuntu</code> 改为 <code>RaspberryPi</code>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@ubuntu:~$ sudo vim /etc/hostname</span><br></pre></td></tr></table></figure>
+
+<p>文件内容改为：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RaspberryPi</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>sudo reboot</code> 命令重启树莓派，重启完成后再次登录即可。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/09/RaspberryPi_Initialization/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -275,6 +348,83 @@
             </div>
           <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/23/MySQL-8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Clockwork Monkey Stutdios">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Clockwork Monkey Stutdios">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/23/MySQL-8/" class="post-title-link" itemprop="url">Ubuntu 安装 MySQL 8.x</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-07-23 08:00:00 / 修改时间：08:50:02" itemprop="dateCreated datePublished" datetime="2020-07-23T08:00:00+08:00">2020-07-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="MySQL-8-x-安装"><a href="#MySQL-8-x-安装" class="headerlink" title="MySQL 8.x 安装"></a>MySQL 8.x 安装</h1><h2 id="MySQL-APT-Repository"><a href="#MySQL-APT-Repository" class="headerlink" title="MySQL APT Repository"></a>MySQL APT Repository</h2><p>APT 地址：<code>https://dev.mysql.com/downloads/repo/apt/</code></p>
+<p>Ubuntu 内下载命令：<code>wget https://repo.mysql.com//mysql-apt-config_0.8.15-1_all.deb</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@VM-0-16-ubuntu:~$ wget https:&#x2F;&#x2F;repo.mysql.com&#x2F;&#x2F;mysql-apt-config_0.8.15-1_all.deb</span><br><span class="line">--2020-06-05 09:23:21--  https:&#x2F;&#x2F;repo.mysql.com&#x2F;&#x2F;mysql-apt-config_0.8.15-1_all.deb</span><br><span class="line">Resolving repo.mysql.com (repo.mysql.com)... 23.199.73.25</span><br><span class="line">Connecting to repo.mysql.com (repo.mysql.com)|23.199.73.25|:443... connected.</span><br><span class="line">HTTP request sent, awaiting response... 200 OK</span><br><span class="line">Length: 35532 (35K) [application&#x2F;x-debian-package]</span><br><span class="line">Saving to: ‘mysql-apt-config_0.8.15-1_all.deb’</span><br><span class="line"></span><br><span class="line">mysql-apt-config_0.8.15-1_all 100%[&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&gt;]  34.70K  82.2KB&#x2F;s    in 0.4s</span><br><span class="line"></span><br><span class="line">2020-06-05 09:23:29 (82.2 KB&#x2F;s) - ‘mysql-apt-config_0.8.15-1_all.deb’ saved [35532&#x2F;35532]</span><br><span class="line"></span><br><span class="line">ubuntu@VM-0-16-ubuntu:~$ ls</span><br><span class="line">mysql-apt-config_0.8.15-1_all.deb</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@VM-0-16-ubuntu:~$ sudo dpkg -i mysql-apt-config_0.8.15-1_all.deb</span><br><span class="line">Selecting previously unselected package mysql-apt-config.</span><br><span class="line">(Reading database ... 77010 files and directories currently installed.)</span><br><span class="line">Preparing to unpack mysql-apt-config_0.8.15-1_all.deb ...</span><br><span class="line">Unpacking mysql-apt-config (0.8.15-1) ...</span><br><span class="line">Setting up mysql-apt-config (0.8.15-1) ...</span><br><span class="line">Warning: apt-key should not be used in scripts (called from postinst maintainerscript of the package mysql-apt-config)</span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@VM-0-16-ubuntu:~$ sudo apt update</span><br><span class="line">Hit:1 http:&#x2F;&#x2F;mirrors.tencentyun.com&#x2F;ubuntu bionic InRelease</span><br><span class="line">Hit:2 http:&#x2F;&#x2F;mirrors.tencentyun.com&#x2F;ubuntu bionic-security InRelease</span><br><span class="line">Hit:3 http:&#x2F;&#x2F;mirrors.tencentyun.com&#x2F;ubuntu bionic-updates InRelease</span><br><span class="line">Get:4 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic InRelease [19.4 kB]</span><br><span class="line">Get:5 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-8.0 Sources [946 B]</span><br><span class="line">Get:6 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-apt-config i386 Packages [563 B]</span><br><span class="line">Get:7 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-apt-config amd64 Packages [563 B]</span><br><span class="line">Get:8 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-8.0 amd64 Packages [7,605 B]</span><br><span class="line">Get:9 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-8.0 i386 Packages [7,606 B]</span><br><span class="line">Get:10 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-tools i386 Packages [4,749 B]</span><br><span class="line">Get:11 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-tools amd64 Packages [5,331 B]</span><br><span class="line">Fetched 46.8 kB in 4s (11.8 kB&#x2F;s)</span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">153 packages can be upgraded. Run &#39;apt list --upgradable&#39; to see them.</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@VM-0-16-ubuntu:~$ sudo apt install mysql-server</span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">The following package was automatically installed and is no longer required:</span><br><span class="line">  linux-modules-4.15.0-29-generic</span><br><span class="line">Use &#39;sudo apt autoremove&#39; to remove it.</span><br><span class="line">The following additional packages will be installed:</span><br><span class="line">  libaio1 libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-common mysql-community-client mysql-community-client-core</span><br><span class="line">  mysql-community-server mysql-community-server-core</span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">  libaio1 libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-common mysql-community-client mysql-community-client-core</span><br><span class="line">  mysql-community-server mysql-community-server-core mysql-server</span><br><span class="line">0 upgraded, 12 newly installed, 0 to remove and 153 not upgraded.</span><br><span class="line">Need to get 35.7 MB of archives.</span><br><span class="line">After this operation, 249 MB of additional disk space will be used.</span><br><span class="line">Do you want to continue? [Y&#x2F;n] Y</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@VM-0-16-ubuntu:~$ sudo apt-get install mysql-server</span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">The following package was automatically installed and is no longer required:</span><br><span class="line">  linux-modules-4.15.0-29-generic</span><br><span class="line">Use &#39;sudo apt autoremove&#39; to remove it.</span><br><span class="line">The following additional packages will be installed:</span><br><span class="line">  libaio1 libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-common mysql-community-client mysql-community-client-core</span><br><span class="line">  mysql-community-server mysql-community-server-core</span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">  libaio1 libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-common mysql-community-client mysql-community-client-core</span><br><span class="line">  mysql-community-server mysql-community-server-core mysql-server</span><br><span class="line">0 upgraded, 12 newly installed, 0 to remove and 153 not upgraded.</span><br><span class="line">Need to get 35.7 MB of archives.</span><br><span class="line">After this operation, 249 MB of additional disk space will be used.</span><br><span class="line">Do you want to continue? [Y&#x2F;n] Y</span><br><span class="line">Get:1 http:&#x2F;&#x2F;mirrors.tencentyun.com&#x2F;ubuntu bionic-updates&#x2F;main amd64 libaio1 amd64 0.3.110-5ubuntu0.1 [6,476 B]</span><br><span class="line">Get:2 http:&#x2F;&#x2F;mirrors.tencentyun.com&#x2F;ubuntu bionic&#x2F;universe amd64 libmecab2 amd64 0.996-5 [257 kB]</span><br><span class="line">Get:3 http:&#x2F;&#x2F;mirrors.tencentyun.com&#x2F;ubuntu bionic&#x2F;universe amd64 mecab-utils amd64 0.996-5 [4,856 B]</span><br><span class="line">Get:4 http:&#x2F;&#x2F;mirrors.tencentyun.com&#x2F;ubuntu bionic&#x2F;universe amd64 mecab-ipadic all 2.7.0-20070801+main-1 [12.1 MB]</span><br><span class="line">Get:5 http:&#x2F;&#x2F;mirrors.tencentyun.com&#x2F;ubuntu bionic&#x2F;universe amd64 mecab-ipadic-utf8 all 2.7.0-20070801+main-1 [3,522 B]</span><br><span class="line">Get:6 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-8.0 amd64 mysql-common amd64 8.0.20-1ubuntu18.04 [94.3 kB]</span><br><span class="line">Get:7 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-8.0 amd64 mysql-community-client-core amd64 8.0.20-1ubuntu18.04 [1,707 kB]</span><br><span class="line">Get:8 http:&#x2F;&#x2F;repo.mysql.com&#x2F;apt&#x2F;ubuntu bionic&#x2F;mysql-8.0 amd64 mysql-community-client amd64 8.0.20-1ubuntu18.04 [2,834 kB]</span><br><span class="line">44% [8 mysql-community-client 57.6 kB&#x2F;2,834 kB 2%]                                                                                    10.1 kB&#x2F;s 35min 14s</span><br></pre></td></tr></table></figure>
+
+
+<p>CREATE DATABASE alpha DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_0900_ai_ci;</p>
+<p>CREATE USER ‘alpha’@’%’ IDENTIFIED BY ‘237172.Alpha’;</p>
+<p>GRANT ALL PRIVILEGES ON alpha.* TO ‘alpha’@’%’;</p>
+<p>FLUSH PRIVILEGES;</p>
+<p>exit;</p>
+
       
     </div>
 
@@ -416,7 +566,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
